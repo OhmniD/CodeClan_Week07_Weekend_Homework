@@ -4,16 +4,10 @@ import WantlistList from '../components/WantlistList'
 
 const WantlistBox = () => {
 
-    const [wantlist, setWantlist] = useState([])
-
-    useEffect(() => {
-        getWantlist()
-        console.log(wantlist.wants)
-    }, []);
-
     const fetchUrl = `https://api.discogs.com`
     const wantlistUrl = `/users/${discogsAuth.username}/wants`
     // const collectionValueUrl = `/users/${discogsAuth.username}/collection/value`
+    const concatUrl = `${fetchUrl}${wantlistUrl}?token=${discogsAuth.pat}`
 
     const headers = {
         headers: {
@@ -21,18 +15,43 @@ const WantlistBox = () => {
         }
     }
 
-    const getWantlist = () => {
-        fetch((`${fetchUrl}${wantlistUrl}?token=${discogsAuth.pat}`), headers)
+    const [url, setUrl] = useState(concatUrl)
+    const [wantlist, setWantlist] = useState([])
+    const [isLoaded, setisLoaded] = useState(false);
+
+    useEffect(() => {
+        getWantlist(url)
+    }, [url]);
+
+
+    const getWantlist = (url) => {
+        fetch(url, headers)
         .then(results => results.json())
-        .then(wantlist => setWantlist(wantlist))
+        .then(result => {
+            setWantlist(result) 
+            setisLoaded(true)
+            }
+        )
+        .catch(error => console.log(error))
+    }
+
+    const handleNextClick = () => {
+        setisLoaded(false);
+        setUrl(wantlist.pagination.urls.next)
+    }
+
+    const handlePreviousClick = () => {
+        setisLoaded(false);
+        setUrl(wantlist.pagination.urls.prev)
     }
 
     return (
+        !isLoaded ? <p>Loading...</p> :
         <section>
             <h1>Hello World</h1>
-            <p>{discogsAuth.username}</p>
-            <p>{discogsAuth.pat}</p>
-            <WantlistList wantlist={wantlist} />
+            <p onClick={handlePreviousClick}>Previous page</p>
+            <p onClick={handleNextClick}>Next page</p>
+            <WantlistList wantlist={wantlist} isLoaded={isLoaded} />
         </section>
     )
 }

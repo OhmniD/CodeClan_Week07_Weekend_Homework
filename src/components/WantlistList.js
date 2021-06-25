@@ -1,18 +1,20 @@
-import { useEffect } from 'react'
+// import { useEffect } from 'react'
 import WantlistItem from './WantlistItem'
 
-const WantlistList = ({wantlist}) => {
-    const wantsArray = wantlist.wants;
-    useEffect(() => console.log(wantsArray), [])
-    
-    const wantlistNodes = wantsArray.map((item) => {
-        return <WantlistItem key={item.id} title={item.basic_information.title} />
-    })
+const WantlistList = ({wantlist, isLoaded}) => {
+
+
+    const wantlistNodes = wantlist.wants.map((item) => { 
+        return <WantlistItem key={item.id} 
+        title={item.basic_information.title} 
+        artist={item.basic_information.artists[0].name}/>
+        }
+        )
 
     return (
-        <>
-        {wantlistNodes}
-        </>
+        <ul>
+            {wantlistNodes}
+        </ul>
     )
 }
 

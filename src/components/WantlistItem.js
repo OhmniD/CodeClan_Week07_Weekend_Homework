@@ -1,6 +1,9 @@
-const WantlistItem = ({title}) => {
+const WantlistItem = ({title, artist}) => {
     return (
-        <h1>{title}</h1>
+        <li>
+            <h2>{title}</h2>
+            <h3>{artist}</h3>
+        </li>
     )
 }
 
