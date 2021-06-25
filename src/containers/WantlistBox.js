@@ -45,12 +45,26 @@ const WantlistBox = () => {
         setUrl(wantlist.pagination.urls.prev)
     }
 
+    const handleLastClick = () => {
+        setisLoaded(false);
+        setUrl(wantlist.pagination.urls.last)
+    }
+
+    const handleFirstClick = () => {
+        setisLoaded(false);
+        setUrl(wantlist.pagination.urls.first)
+    }
+
     return (
         !isLoaded ? <p>Loading...</p> :
         <section>
             <h1>Discogs Wantlist Aggregator</h1>
-            <p onClick={handlePreviousClick}>Previous page</p>
-            <p onClick={handleNextClick}>Next page</p>
+            <p>Page {wantlist.pagination.page} of {wantlist.pagination.pages}</p>
+            <p>{wantlist.pagination.items} items in want list</p>
+            {wantlist.pagination.page === 1 ? null : <p onClick={handlePreviousClick}>Previous page</p>}
+            {wantlist.pagination.page === wantlist.pagination.pages ? null : <p onClick={handleNextClick}>Next page</p>}
+            {wantlist.pagination.page === 1 ? null : <p onClick={handleFirstClick}>First page</p>}
+            {wantlist.pagination.page === wantlist.pagination.pages ? null : <p onClick={handleLastClick}>Last page</p>}
             <WantlistList wantlist={wantlist} isLoaded={isLoaded} />
         </section>
     )
