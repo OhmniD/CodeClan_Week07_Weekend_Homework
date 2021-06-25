@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&family=Roboto&display=swap');
+
+body {
+  background-color:#282c34;
+  color: white;
+  font-family:"Roboto";
+}
+
+h1 {
+  padding-top: 30px;
+  margin-left: 64px;
+}
+
+h2 {
+  margin-top: 0;
+}
+
+a, a:visited {
+  color: white;
+  text-decoration: none;
+}
+
+#wantlist {
+  list-style-type: none;
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  padding: 3rem;
+  flex-wrap: wrap;
+  grid-gap: 1rem;
+}
+.wantlistItem {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  list-style-type: none;
+  height: 250px;
+  width: 400px;
+  min-width: 150px;
+  padding: 1.5rem;
+  border-radius: 16px;
+  background-color: #1d1f24;
+  box-shadow: -1rem 2rem 3rem #000;
+  transition: 0.2s;
+}
+
+.wantlistItem:hover {
+  transform: translateY(-1rem);
+}
+
+.wantlistItem-thumbnail {
+  width: 170px;
+}
+
+.wantlistItem:hover {
+  background: linear-gradient(180deg,dodgerblue,#e52e71);
+  text-shadow: none;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}

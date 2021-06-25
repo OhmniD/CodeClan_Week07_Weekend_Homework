@@ -48,7 +48,7 @@ const WantlistBox = () => {
     return (
         !isLoaded ? <p>Loading...</p> :
         <section>
-            <h1>Hello World</h1>
+            <h1>Discogs Wantlist Aggregator</h1>
             <p onClick={handlePreviousClick}>Previous page</p>
             <p onClick={handleNextClick}>Next page</p>
             <WantlistList wantlist={wantlist} isLoaded={isLoaded} />
