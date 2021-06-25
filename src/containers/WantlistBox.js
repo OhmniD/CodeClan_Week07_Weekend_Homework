@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import discogsAuth from '../auth'
+import {discogsAuth} from '../auth'
 import WantlistList from '../components/WantlistList'
 
 const WantlistBox = () => {

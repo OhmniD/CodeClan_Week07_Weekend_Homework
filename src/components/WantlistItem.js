@@ -1,6 +1,8 @@
+import AddToSpotifyButton from "./AddToSpotifyButton";
+
 const WantlistItem = ({title, artist, year, format, label, genre, link, cover}) => {
     return (
-        <a href={link}>
+        // <a href={link}>
             <li className="wantlistItem">
                 <img className="wantlistItem-thumbnail" src={cover} alt="" />
                 <div>
@@ -11,8 +13,9 @@ const WantlistItem = ({title, artist, year, format, label, genre, link, cover}) 
                     <p>{format}</p>
                     <p>{genre}</p>
                 </div>
+                <AddToSpotifyButton title={title}/>
             </li>
-        </a>
+        // </a>
     )
 }
 
