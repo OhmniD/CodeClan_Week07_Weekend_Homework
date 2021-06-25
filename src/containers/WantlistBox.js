@@ -8,6 +8,7 @@ const WantlistBox = () => {
 
     useEffect(() => {
         getWantlist()
+        console.log(wantlist.wants)
     }, []);
 
     const fetchUrl = `https://api.discogs.com`

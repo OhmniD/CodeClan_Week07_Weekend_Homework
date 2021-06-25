@@ -2,14 +2,16 @@ import { useEffect } from 'react'
 import WantlistItem from './WantlistItem'
 
 const WantlistList = ({wantlist}) => {
-
-    useEffect(() => {console.log(wantlist)}, [])
-    // const wantlistNodes = wantlist.wants.map((item) => {
-    //     return <WantlistItem title={item.basic_information.title} />
-    // })
+    const wantsArray = wantlist.wants;
+    useEffect(() => console.log(wantsArray), [])
+    
+    const wantlistNodes = wantsArray.map((item) => {
+        return <WantlistItem key={item.id} title={item.basic_information.title} />
+    })
 
     return (
         <>
+        {wantlistNodes}
         </>
     )
 }
