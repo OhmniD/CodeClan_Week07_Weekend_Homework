@@ -14,6 +14,8 @@ const WantlistList = ({wantlist, isLoaded}) => {
         genre={item.basic_information.genres[0]}
         link={item.basic_information.master_url}
         cover={item.basic_information.cover_image}
+        isLoaded={isLoaded}
+        wantlist={wantlist}
         />
         }
         )

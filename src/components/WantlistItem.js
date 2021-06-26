@@ -1,4 +1,4 @@
-import AddToSpotifyButton from "./AddToSpotifyButton";
+import AddToSpotifyButton from "../containers/AddToSpotifyButton";
 
 const WantlistItem = ({title, artist, year, format, label, genre, link, cover}) => {
     return (
