@@ -11,6 +11,10 @@ const AddToSpotifyButton = ({title, artist, year}) => {
         searchForAlbum()
     }, [])
 
+    useEffect(() => {
+        addTracksToPlaylist()
+    }, [playlistId])
+
 
     const createPlaylistData = {
         "name": `${artist} - ${title} (${year})`,
@@ -50,7 +54,6 @@ const AddToSpotifyButton = ({title, artist, year}) => {
         }))
         .then(tracks => setAlbumTracks(tracks.join()))
         .then(createPlaylist())
-        .then(addTracksToPlaylist())
     }
 
 
