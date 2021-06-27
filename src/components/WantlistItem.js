@@ -13,7 +13,7 @@ const WantlistItem = ({title, artist, year, format, label, genre, link, cover}) 
                     <p>{format}</p>
                     <p>{genre}</p>
                 </div>
-                <AddToSpotifyButton title={title}/>
+                <AddToSpotifyButton title={title} artist={artist} year={year}/>
             </li>
         // </a>
     )
