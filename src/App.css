@@ -20,6 +20,18 @@ a, a:visited {
   text-decoration: none;
 }
 
+#loading {
+  font-size: 60px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#page-navigation{
+  margin-left: 64px;
+}
+
 #wantlist {
   list-style-type: none;
   display:grid;
@@ -56,4 +68,8 @@ a, a:visited {
   background-clip: text;
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
+}
+
+.spotify-button {
+  border-radius: 8px;
 }

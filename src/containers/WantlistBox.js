@@ -56,15 +56,17 @@ const WantlistBox = () => {
     }
 
     return (
-        !isLoaded ? <p>Loading...</p> :
+        !isLoaded ? <p id="loading">Loading...</p> :
         <section>
             <h1>Discogs Wantlist Aggregator</h1>
-            <p>Page {wantlist.pagination.page} of {wantlist.pagination.pages}</p>
-            <p>{wantlist.pagination.items} items in want list</p>
-            {wantlist.pagination.page === 1 ? null : <p onClick={handlePreviousClick}>Previous page</p>}
-            {wantlist.pagination.page === wantlist.pagination.pages ? null : <p onClick={handleNextClick}>Next page</p>}
-            {wantlist.pagination.page === 1 ? null : <p onClick={handleFirstClick}>First page</p>}
-            {wantlist.pagination.page === wantlist.pagination.pages ? null : <p onClick={handleLastClick}>Last page</p>}
+            <div id="page-navigation">
+                <p>Page {wantlist.pagination.page} of {wantlist.pagination.pages}</p>
+                <p>{wantlist.pagination.items} items in want list</p>
+                    {wantlist.pagination.page === 1 ? null : <p onClick={handlePreviousClick}>Previous page</p>}
+                    {wantlist.pagination.page === wantlist.pagination.pages ? null : <p onClick={handleNextClick}>Next page</p>}
+                    {wantlist.pagination.page === 1 ? null : <p onClick={handleFirstClick}>First page</p>}
+                    {wantlist.pagination.page === wantlist.pagination.pages ? null : <p onClick={handleLastClick}>Last page</p>}
+            </div>
             <WantlistList wantlist={wantlist} isLoaded={isLoaded} />
         </section>
     )

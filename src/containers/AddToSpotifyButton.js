@@ -72,7 +72,7 @@ const AddToSpotifyButton = ({title, artist, year}) => {
     }
 
     return (
-        albumInSpotify ? <button onClick={handleClick}>Add to Spotify</button> : null
+        albumInSpotify ? <button className="spotify-button" onClick={handleClick}>Add to Spotify</button> : null
     )
 }
 
