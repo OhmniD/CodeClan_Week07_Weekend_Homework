@@ -2,22 +2,37 @@
 
 body {
   background-color:#282c34;
-  color: white;
+  color: #f3f3f3;
   font-family:"Roboto";
 }
 
 h1 {
-  padding-top: 30px;
-  margin-left: 64px;
+
 }
 
 h2 {
   margin-top: 0;
 }
 
-a, a:visited {
-  color: white;
-  text-decoration: none;
+#nav-list > li {
+  margin-top: 15px;
+  color: #f3f3f3;
+  /* text-decoration: none; */
+}
+
+.pagination-link {
+  text-decoration: underline;
+}
+
+.pagination-link:hover {
+  transform: scale(1.1);
+  transition: 0.15s;
+  background: linear-gradient(90deg,dodgerblue,#e52e71);
+  cursor: pointer;
+  text-shadow: none;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
 }
 
 #loading {
@@ -28,8 +43,28 @@ a, a:visited {
   transform: translate(-50%, -50%);
 }
 
-#page-navigation{
-  margin-left: 64px;
+header {
+  background-color: #3e4451;
+  background-image: linear-gradient(#3e4451, #282c34);
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 64px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  overflow: hidden;
+}
+
+/* #page-navigation{
+} */
+
+#nav-list {
+  list-style-type: none;
+  display:flex;
+  justify-content: space-evenly;
+  margin-bottom: 15px;
+  margin-left: -64px;
+  margin-right: 64px;
 }
 
 #wantlist {
@@ -39,6 +74,7 @@ a, a:visited {
   padding: 3rem;
   flex-wrap: wrap;
   grid-gap: 1rem;
+  margin-top: 180px;
 }
 .wantlistItem {
   display: grid;

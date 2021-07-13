@@ -57,18 +57,26 @@ const WantlistBox = () => {
 
     return (
         !isLoaded ? <p id="loading">Loading...</p> :
-        <section>
-            <h1>Discogs Wantlist Aggregator</h1>
-            <div id="page-navigation">
-                <p>Page {wantlist.pagination.page} of {wantlist.pagination.pages}</p>
-                <p>{wantlist.pagination.items} items in want list</p>
-                    {wantlist.pagination.page === 1 ? null : <p onClick={handlePreviousClick}>Previous page</p>}
-                    {wantlist.pagination.page === wantlist.pagination.pages ? null : <p onClick={handleNextClick}>Next page</p>}
-                    {wantlist.pagination.page === 1 ? null : <p onClick={handleFirstClick}>First page</p>}
-                    {wantlist.pagination.page === wantlist.pagination.pages ? null : <p onClick={handleLastClick}>Last page</p>}
-            </div>
-            <WantlistList wantlist={wantlist} isLoaded={isLoaded} />
-        </section>
+        <main>
+            <header>
+                <h1>Discogs Wantlist</h1>
+                <p>Retrieve Discogs wantlist and add items to Spotify</p>
+                <nav id="page-navigation">
+                    <ul id="nav-list">
+                        <li>Page {wantlist.pagination.page} of {wantlist.pagination.pages}</li>
+                        <li>{wantlist.pagination.items} items in want list</li>
+                        {wantlist.pagination.page === 1 ? null : <li className="pagination-link" onClick={handleFirstClick}>First page</li>}
+                            {wantlist.pagination.page === 1 ? null : <li className="pagination-link" onClick={handlePreviousClick}>Previous page</li>}
+                            {wantlist.pagination.page === wantlist.pagination.pages ? null : <li className="pagination-link" onClick={handleNextClick}>Next page</li>}
+                            {wantlist.pagination.page === wantlist.pagination.pages ? null : <li className="pagination-link" onClick={handleLastClick}>Last page</li>}
+                    </ul>
+                </nav>
+                </header>
+                <section id="wantlist-items">
+                    <WantlistList wantlist={wantlist} isLoaded={isLoaded} />
+                </section>
+        </main>
+        
     )
 }
 
