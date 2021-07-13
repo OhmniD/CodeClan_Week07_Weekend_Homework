@@ -2,14 +2,14 @@
 
 This app was created as weekend homework for week 7 of CodeClan. The objective was to create a React app that would dynamically render data fetched from an API. I extended the scope to also research and use sending to an API and using APIs that required authorisation.
 
-The app fetches a user's wantlist from the record catalogue Discogs.com, renders the album information and iamge thumbnail in a card format, and adds a button to create a Spotify playlist for that album (if the album is found on Spotify).
+The app fetches a user's wantlist from the record catalogue Discogs.com, renders the album information and image thumbnail in a card format, and adds a button to create a Spotify playlist for that album (if the album is found on Spotify).
 
 ## Usage
 
 * Download/clone this repository
 * Run `npm install`
 * You will need a personal access token from your account on discogs.com, and a spotify API key.
-* For the Spotify API key, you will need to make sure the `playlist-modify-private` and `playlist-modify-public` scopes are enabled for your key (https://developer.spotify.com/console/get-several-albums/)
+* For the Spotify API key, you will need to make sure the `playlist-modify-private` and `playlist-modify-public` scopes are enabled for your key (https://developer.spotify.com/console/post-playlist-tracks/?playlist_id=&position=&uris=)
 * In the ./src folder, rename auth.js.template to auth.js and insert the required information
 * Run `npm start`
 * Browse to the site at http://localhost:3000
