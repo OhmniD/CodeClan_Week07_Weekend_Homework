@@ -23,4 +23,4 @@ As I only had a weekend to complete this project, I had several more features an
 * Integrate React drag and drop - perhaps drag an album's image onto the header bar to add that album to Spotify? 
 * Use Async Await with fetch to practice more modern syntax
 
-![screenshot](./discogs-api-homework.png)
+![new-screenshot](./discogs-api-homework.png)
