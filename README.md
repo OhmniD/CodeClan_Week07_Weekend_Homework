@@ -24,4 +24,4 @@ As I only had a weekend to complete this project, I had several more features an
 * Use Async Await with fetch to practice more modern syntax
 
 
-![new-screenshot](./discogs-api-homework.png)
+![screenshot-of-app](./discogs-api-app.png)
