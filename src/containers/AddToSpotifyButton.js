@@ -12,7 +12,9 @@ const AddToSpotifyButton = ({title, artist, year}) => {
     }, [])
 
     useEffect(() => {
-        addTracksToPlaylist()
+        if (playlistId) {
+            addTracksToPlaylist()
+        }
     }, [playlistId])
 
 

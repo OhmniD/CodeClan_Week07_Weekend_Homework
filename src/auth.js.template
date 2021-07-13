@@ -1,0 +1,9 @@
+export const discogsAuth = {
+    'username': 'DISCOGS_USERNAME',
+    'pat': 'YOUR_DISCOGS_PERSONAL_ACCESS_TOKEN'
+};
+
+export const spotifyAuth = {
+    'username': 'SPOTIFY_USERNAME',
+    'token': 'SPOTIFY_API_TOKEN'
+}

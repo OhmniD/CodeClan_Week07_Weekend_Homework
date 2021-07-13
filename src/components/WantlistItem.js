@@ -5,7 +5,7 @@ const WantlistItem = ({title, artist, year, format, label, genre, link, cover}) 
         // <a href={link}>
             <li className="wantlistItem">
                 <img className="wantlistItem-thumbnail" src={cover} alt="" />
-                <div>
+                <div className="item-details">
                     <h2>{title}</h2>
                     <h3>{artist}</h3>
                     <p>{year}</p>

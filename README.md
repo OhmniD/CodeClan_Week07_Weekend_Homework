@@ -1,70 +1,24 @@
-# Getting Started with Create React App
+# Discogs/Spotify playlist creator
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This app was created as weekend homework for week 7 of CodeClan. The objective was to create a React app that would dynamically render data fetched from an API. I extended the scope to also research and use sending to an API and using APIs that required authorisation.
 
-## Available Scripts
+The app fetches a user's wantlist from the record catalogue Discogs.com, renders the album information and iamge thumbnail in a card format, and adds a button to create a Spotify playlist for that album (if the album is found on Spotify).
 
-In the project directory, you can run:
+## Usage
 
-### `npm start`
+* Download/clone this repository
+* Run `npm install`
+* You will need a personal access token from your account on discogs.com, and a spotify API key.
+* For the Spotify API key, you will need to make sure the `playlist-modify-private` and `playlist-modify-public` scopes are enabled for your key (https://developer.spotify.com/console/get-several-albums/)
+* In the ./src folder, rename auth.js.template to auth.js and insert the required information
+* Run `npm start`
+* Browse to the site at http://localhost:3000
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Future refinements/fixes
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+As I only had a weekend to complete this project, I had several more features and improvements I wanted to add but didn't have time for. It's not a particularly useful app, but it's good to practice on!
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+* Currently Spotify search just searches by album name, which can be ambiguous. Better solution would be to list all albums by an artist, then filter those results to find the correct album.
+* Tidy, fix, improve CSS - make the header horizontal and fix so it in place so pagination options always accessible, make cards and animations neater. Possibly experiment with Tailwinds.
+* Integrate React drag and drop - perhaps drag an album's image onto the header bar to add that album to Spotify? 
+* Use Async Await with fetch to practice more modern syntax

@@ -62,7 +62,7 @@ a, a:visited {
   width: 170px;
 }
 
-.wantlistItem:hover {
+.wantlistItem:hover:not(.spotify-button) {
   background: linear-gradient(180deg,dodgerblue,#e52e71);
   text-shadow: none;
   background-clip: text;
